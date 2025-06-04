@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>National Paint Colors</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #111;
+      color: white;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #facc15;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .color-card {
+      background: #222;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+      cursor: default;
+      user-select: none;
+    }
+    .color-swatch {
+      width: 100%;
+      height: 100px;
+      border-radius: 0.5rem;
+      margin-bottom: 0.75rem;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    }
+    .color-name {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.25rem;
+      color: #facc15;
+    }
+    .color-code {
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <h1>National Paint Colors</h1>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background-color: #FF5733;"></div>
+      <div class="color-name">Sunset Orange</div>
+      <div class="color-code">#FF5733</div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background-color: #33FF57;"></div>
+      <div class="color-name">Lime Green</div>
+      <div class="color-code">#33FF57</div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background-color: #3357FF;"></div>
+      <div class="color-name">Ocean Blue</div>
+      <div class="color-code">#3357FF</div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background-color: #F1C40F;"></div>
+      <div class="color-name">Golden Yellow</div>
+      <div class="color-code">#F1C40F</div>
+    </div>
+    
+  </div>
+  <script>
+  const ralColors = [
+    { name: "Green Blue", code: "RAL 5001", hex: "#354D73" },
+    { name: "Steel Blue", code: "RAL 5011", hex: "#232C3F" },
+    { name: "Light Blue", code: "RAL 5012", hex: "#2A6EBB" },
+    { name: "Pigeon Blue", code: "RAL 5014", hex: "#5B7F9B" },
+    { name: "Distant Blue", code: "RAL 5023", hex: "#4D668E" },
+    { name: "Black Grey", code: "RAL 7021", hex: "#2E3234" },
+    { name: "Pebble Grey", code: "RAL 7032", hex: "#B9B9A8" },
+    { name: "Light Grey", code: "RAL 7035", hex: "#D7D7D7" },
+    { name: "Traffic Grey B", code: "RAL 7043", hex: "#4C5356" },
+    { name: "Olive Brown", code: "RAL 8008", hex: "#6F4F28" },
+    { name: "Nut Brown", code: "RAL 8011", hex: "#5A3A29" },
+    { name: "Beige Brown", code: "RAL 8024", hex: "#79553C" },
+    { name: "Pale Brown", code: "RAL 8025", hex: "#755C49" },
+    { name: "Lemon Yellow", code: "RAL 1012", hex: "#D6C537" },
+    { name: "Oyster White", code: "RAL 1013", hex: "#EAE6CA" },
+    { name: "Ivory", code: "RAL 1014", hex: "#DDC49A" },
+    { name: "Light Ivory", code: "RAL 1015", hex: "#EDE3CD" },
+    { name: "Sulfur Yellow", code: "RAL 1016", hex: "#EAF044" },
+    { name: "Saffron Yellow", code: "RAL 1017", hex: "#F6B940" },
+    { name: "Zinc Yellow", code: "RAL 1018", hex: "#FADA00" },
+    { name: "Grey Beige", code: "RAL 1019", hex: "#9E927F" },
+    { name: "Rape Yellow", code: "RAL 1021", hex: "#F6B600" },
+    { name: "Traffic Yellow", code: "RAL 1023", hex: "#FAD201" },
+    { name: "Melon Yellow", code: "RAL 1028", hex: "#FFA420" },
+    { name: "Broom Yellow", code: "RAL 1032", hex: "#D6AE01" },
+    { name: "Dahlia Yellow", code: "RAL 1033", hex: "#F3A505" },
+    { name: "Pastel Yellow", code: "RAL 1034", hex: "#EFA94A" },
+    { name: "Vermilion", code: "RAL 2002", hex: "#CB2821" },
+    { name: "Bright Red Orange", code: "RAL 2008", hex: "#F75E25" },
+    { name: "Light Pink", code: "RAL 3015", hex: "#EA899A" },
+    { name: "Luminous Green", code: "RAL 6038", hex: "#00F700" },
+    { name: "Pure White", code: "RAL 9010", hex: "#F6F6F6" },
+    { name: "Alice Blue", hex: "#F0F8FF" },
+    { name: "Antique White", hex: "#FAEBD7" },
+    { name: "Aqua", hex: "#00FFFF" },
+    { name: "Aquamarine", hex: "#7FFFD4" },
+    { name: "Azure", hex: "#F0FFFF" },
+    { name: "Beige", hex: "#F5F5DC" },
+    { name: "Bisque", hex: "#FFE4C4" },
+    { name: "Black", hex: "#000000" },
+    { name: "Blanched Almond", hex: "#FFEBCD" },
+    { name: "Blue", hex: "#0000FF" },
+    { name: "Blue Violet", hex: "#8A2BE2" },
+    { name: "Brown", hex: "#A52A2A" },
+    { name: "Burly Wood", hex: "#DEB887" },
+    { name: "Cadet Blue", hex: "#5F9EA0" },
+    { name: "Chartreuse", hex: "#7FFF00" },
+    { name: "Chocolate", hex: "#D2691E" },
+    { name: "Coral", hex: "#FF7F50" },
+    { name: "Cornflower Blue", hex: "#6495ED" },
+    { name: "Cornsilk", hex: "#FFF8DC" },
+    { name: "Crimson", hex: "#DC143C" },
+    // add more...
+  ];
+
+  const grid = document.querySelector(".color-grid");
+
+  ralColors.forEach(color => {
+    const card = document.createElement("div");
+    card.className = "color-card";
+    card.innerHTML = `
+      <div class="color-swatch" style="background-color: ${color.hex};"></div>
+      <div class="color-name">${color.name}</div>
+      <div class="color-code">${color.code ? color.code + ' (' + color.hex + ')' : color.hex}</div>
+    `;
+    grid.appendChild(card);
+  });
+</script>
+
+
+</body>
+</html>
