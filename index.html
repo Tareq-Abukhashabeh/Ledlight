@@ -28,8 +28,6 @@
       color: white;
     }
 
-   
-
     /* Header styles */
     header {
       max-width: 80rem; /* 7xl */
@@ -157,6 +155,10 @@
       margin-bottom: 1.5rem;
       color: #facc15;
       text-align: center;
+      cursor: pointer;
+    }
+    #gallery h2:hover {
+      color: #fff;
     }
     .gallery-grid {
       display: grid;
@@ -386,14 +388,14 @@
   <header>
     <div class="flex items-center">
       <div class="logo-circle">
-        <img src="pics/best.png" alt="Logo" />
+        <!--<img src="pics/best.png" alt="Logo" /> -->
       </div>
       <span class="font-orbitron text-white text-2xl select-none">LedLight</span>
     </div>
     <nav>
-      <a href="#about" tabindex="0">About Us</a>
-      <a href="#gallery" tabindex="0">Gallery</a>
-      <a href="#contact" tabindex="0">Contact Us</a>
+      <a href="#about" tabindex="0" class="mr-4">About Us</a>
+      <a href="#" id="gallery-link" tabindex="0" class="mr-4" role="link" aria-label="Gallery page">Gallery</a>
+      <a href="#" id="colors-link" tabindex="0" role="link" aria-label="Colors page">Colors</a>
     </nav>
   </header>
 
@@ -410,41 +412,26 @@
   <section id="about" role="region" aria-labelledby="about-title">
     <h2 id="about-title">About Us</h2>
     <p>
-      LedLight Painting Workshop offers a unique experience blending art and technology. Learn to create stunning light paintings using LED tools in a fun and creative environment.
+        We are a specialized workshop offering high-quality painting services for a wide range of electrical items. Whether it’s spotlights, table lamps, or other lighting fixtures, we restore and customize each piece with precision and care
+    </p>
+    <br>
+    <p>
+        نحن ورشة متخصصة في تقديم خدمات طلاء عالية الجودة لمجموعة متنوعة من الأجهزة الكهربائية. سواء كانت سبوت لايت أو أي قطع إنارة أخرى، نقوم بترميمها وتخصيصها بدقة وعناية.
     </p>
   </section>
 
   <!-- Gallery Section -->
-  <section id="gallery" role="region" aria-labelledby="gallery-title">
-    <h2 id="gallery-title">Gallery</h2>
-    <div class="gallery-grid" role="list">
-      <!-- Gallery items -->
-      <button class="gallery-item" role="listitem" aria-haspopup="dialog" tabindex="0" data-before="pics/ave.jpg" data-after="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" data-description="Before And After ">
-        <img src="pics/Untitled design.jpg" alt="Gallery item 1" />
-      </button>
-      <button class="gallery-item" role="listitem" aria-haspopup="dialog" tabindex="0" data-before="pics/famo_before.jpg" data-after="pics/famo_after.jpg" data-description="Before And After">
-        <img src="pics/famo_after-Pacdora.png" alt="Gallery item 2" />
-      </button>
-      <button class="gallery-item" role="listitem" aria-haspopup="dialog" tabindex="0" data-before="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" data-after="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" data-description="Before And After">
-        <img src="pics/ave-Pacdora.png" alt="Gallery item 3" />
-      </button>
-      <button class="gallery-item" role="listitem" aria-haspopup="dialog" tabindex="0" data-before="pics/alspot_before.jpg" data-after="pics/alspot_after.jpg" data-description="Before And After">
-        <img src="pics/alspot_after.png" alt="Gallery item 1" />
-      </button>
+  <section id="gallery" role="region" aria-labelledby="gallery-title" class="max-w-7xl mx-auto my-12 px-4">
+    <h2 id="gallery-title" class="font-orbitron text-3xl text-center text-yellow-400 mb-6 cursor-pointer" tabindex="0" onclick="window.location.href='gallery.html'" onkeydown="if(event.key==='Enter'){window.location.href='gallery.html'}">
+      Gallery
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <img src="pics/Untitled design.jpg" alt="Gallery intro 1" class="rounded-lg shadow-lg cursor-pointer" tabindex="0" onclick="window.location.href='gallery.html'" onkeydown="if(event.key==='Enter'){window.location.href='gallery.html'}" />
+      <img src="pics/famo_after-Pacdora.png" alt="Gallery intro 2" class="rounded-lg shadow-lg cursor-pointer" tabindex="0" onclick="window.location.href='gallery.html'" onkeydown="if(event.key==='Enter'){window.location.href='gallery.html'}" />
+      <img src="pics/ave-Pacdora.png" alt="Gallery intro 3" class="rounded-lg shadow-lg cursor-pointer" tabindex="0" onclick="window.location.href='gallery.html'" onkeydown="if(event.key==='Enter'){window.location.href='gallery.html'}" />
+      <img src="pics/alspot_after.png" alt="Gallery intro 4" class="rounded-lg shadow-lg cursor-pointer" tabindex="0" onclick="window.location.href='gallery.html'" onkeydown="if(event.key==='Enter'){window.location.href='gallery.html'}" />
     </div>
   </section>
-
-  <!-- Modal -->
-  <div id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title" tabindex="-1">
-    <div class="modal-content" tabindex="0">
-      <button class="modal-close" aria-label="Close modal">&times;</button>
-      <div class="modal-images">
-        <img id="modal-before" src="" alt="Before image" />
-        <img id="modal-after" src="" alt="After image" />
-      </div>
-      <div class="modal-description" id="modal-title"></div>
-    </div>
-  </div>
 
   <!-- Contact Section -->
   <section id="contact" role="region" aria-labelledby="contact-title">
@@ -616,5 +603,16 @@
     initCanvas();
     drawStars();
   </script>
-</body>
-</html>
+  <script>
+    // Add click event listeners for gallery and colors links
+    document.getElementById('gallery-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'gallery.html';
+    });
+    document.getElementById('colors-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.location.href = 'colors.html';
+    });
+  </script>
+ </body>
+ </html>
