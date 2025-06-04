@@ -302,6 +302,34 @@
       gap: 1rem;
       z-index: 60;
     }
+    @media (max-width: 480px) {
+      #quick-links {
+        right: auto;
+        bottom: 0.5rem;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        background: rgba(0,0,0,0.5);
+        padding: 0.25rem 0.5rem;
+        border-radius: 9999px;
+        gap: 0.5rem;
+        max-width: 90vw;
+        overflow-x: auto;
+        scrollbar-width: none; /* Firefox */
+      }
+      #quick-links::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
+      }
+      .quick-link {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.875rem;
+        white-space: nowrap;
+      }
+      .quick-link i {
+        font-size: 1rem;
+      }
+    }
     .quick-link {
       background: white;
       color: black;
