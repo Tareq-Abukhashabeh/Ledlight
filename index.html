@@ -304,30 +304,15 @@
     }
     @media (max-width: 480px) {
       #quick-links {
-        right: auto;
-        bottom: 0.5rem;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: row;
-        background: rgba(0,0,0,0.5);
-        padding: 0.25rem 0.5rem;
-        border-radius: 9999px;
-        gap: 0.5rem;
-        max-width: 90vw;
-        overflow-x: auto;
-        scrollbar-width: none; /* Firefox */
+        display: none;
       }
-      #quick-links::-webkit-scrollbar {
-        display: none; /* Chrome, Safari */
+      header {
+        padding: 0.75rem 1rem;
+        transition: padding 0.3s ease;
       }
-      .quick-link {
-        padding: 0.25rem 0.75rem;
-        font-size: 0.875rem;
-        white-space: nowrap;
-      }
-      .quick-link i {
+      header nav a {
         font-size: 1rem;
+        margin-left: 1rem;
       }
     }
     .quick-link {
